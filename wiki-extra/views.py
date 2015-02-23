@@ -6,4 +6,4 @@ from django.contrib.auth.decorators import login_required
 
 @login_required()
 def index(request):
-    return HttpResponse("{0:s}".format(request.user))
+    return HttpResponse("{0:s}".format(request.user.first_name))

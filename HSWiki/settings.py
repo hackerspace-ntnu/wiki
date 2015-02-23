@@ -37,6 +37,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'allaccess',
+    'wiki-extra',
+
+    'mptt',
+    'sekizai',
+    'django.contrib.humanize',
+    'django.contrib.sites',
     'wiki',
 )
 
@@ -52,10 +58,10 @@ MIDDLEWARE_CLASSES = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    # Default backend
-    'django.contrib.auth.backends.ModelBackend',
     # Additional backend
     'allaccess.backends.AuthorizedServiceBackend',
+    # Default backend
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 
@@ -96,3 +102,15 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+    'sekizai.context_processors.sekizai',
+)
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+SITE_ID = 1
