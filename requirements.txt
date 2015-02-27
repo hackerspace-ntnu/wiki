@@ -4,3 +4,4 @@ django-mptt
 django-sekizai
 sorl-thumbnail
 Pillow
+django-all-access
