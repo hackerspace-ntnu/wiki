@@ -1,3 +1,5 @@
+hswiki/local_settings.py
+
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
 *.iml
@@ -100,3 +102,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# SQLite
+*.sqlite3
