@@ -105,3 +105,6 @@ target/
 
 # SQLite
 *.sqlite3
+
+#Djangowiki
+media/

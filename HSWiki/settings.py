@@ -16,16 +16,25 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
-from local_settings import SECRET_KEY, DEBUG
+from hswiki.local_settings import SECRET_KEY, DEBUG, TEMPLATE_DEBUG
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = TEMPLATE_DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '.hackerspace-ntnu.no',
+    '.hackerspace-ntnu.no.',
+    'hackerspace.idi.ntnu.no',
+    'hackerspace.idi.ntnu.no.',
+    ]
+
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
 
 
 # Application definition
@@ -37,7 +46,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djangowiki',
     'django.contrib.sites', # django 1.6.2
     'django.contrib.humanize',
     'django_nyt',
@@ -107,4 +115,7 @@ SITE_ID = 1
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
